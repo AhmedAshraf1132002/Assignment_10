@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <div class="container text-center ">
+                <h1 class="py-2 my-5  m-auto">Bookmarker
+                </h1>
+                <div class="Bookmarker-box pt-4 p-4">
+                    <h2 class="px-2">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-solid fa-bookmark"></i>
+                    </h2>
+                    <div class="big-layer d-none" id="layer">
+                        <div class="content-Layer">
+                            <header class=" d-flex justify-content-between align-items-center">
+                                <div class="circles d-flex  align-items-center ms-3 mt-3">
+                                    <span class="one rounded-circle ms-2"></span>
+                                    <span class="two rounded-circle ms-2"></span>
+                                    <span class="three rounded-circle ms-2"></span>
+                                </div>
+                                <button class="bg-transparent border-0 me-4 mt-3 closeBtn">
+                                    <i class="fa-solid fa-xmark fs-3"></i>
+                                </button>
+                            </header>
+                            <p class="m-0 mx-2 py-3">Site Name or Url is not valid, Please follow the rules below :
+                            </p>
+                            <ul class="list-unstyled d-flex flex-column align-items-start justify-content-center  px-4">
+                                <li>
+                                    <i class="fa-regular fa-circle-right"></i>
+                                    Site name must contain at least 3 characters
+                                </li>
+                                <li class="py-3">
+                                    <i class="fa-regular fa-circle-right"></i>
+                                    Site URL must be a valid one
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="name" class="site-name  d-flex flex-column justify-content-center align-items-start my-4">
+                        <label for="BookmarkName" class="fw-semibold pb-2">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            Site Name
+                        </label>
+                        <input id="BookmarkName" type="text" placeholder="Bookmark Name" class="form-control">
+                    </div>
+                    <div id="url" class="site-URL d-flex flex-column justify-content-center align-items-start ">
+                        <label for="WebsiteURL" class="fw-semibold pb-2">
+                            <i class="fa-solid fa-link"></i>
+                            site-URL
+                        </label>
+                        <input id="WebsiteURL" type="text" placeholder="Website URL" class="form-control">
+                    </div>
+                    <button id="addBtn" class="btn btnSubmit px-5 mt-4" disabled>Submit</button>
+                </div>
+                <input onkeyup="search(this.value)" type="text" placeholder="search by BookMarkName"
+                    class="form-control mb-5 mt-2" />
+
+
+
+                <div class="output bg-white">
+                    <table class="w-100">
+                        <thead>
+                        </thead>
+                        <tbody id="tableBody">
+<tr class=""></tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <footer>
+                    <h6 class="text-muted">@ 2019 BookMarker Inc</h6>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
