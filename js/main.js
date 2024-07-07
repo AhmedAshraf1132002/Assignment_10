@@ -2,9 +2,8 @@ let nameInput = document.getElementById("BookmarkName");
 let urlInput = document.getElementById("WebsiteURL");
 let addBtn = document.getElementById("addBtn");
 let tableBody = document.getElementById("tableBody");
-
 let BookMarks;
-let mainIndex=0;
+let mainIndex = 0;
 
 if (localStorage.getItem("BookMarks") == null) {
   BookMarks = [];
@@ -13,59 +12,39 @@ if (localStorage.getItem("BookMarks") == null) {
   displayBook(BookMarks);
 }
 
+let nameRagex = /^[A-Za-z_]{1,}$/;
 
-
-let nameRagex=/^[A-Za-z_]{1,}$/
-
-function isNameValid()
-{
-  if(nameRagex.test(nameInput.value))
-    {
-      return true
-    }
-    else
-    {
-      return false
-    }
+function isNameValid() {
+  if (nameRagex.test(nameInput.value)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-let urlRagex=/(https:\/\/)?(www\.)?[A-Za-z0-9_\.]\.com$/
-function isUrlValid()
-{
-  if(urlRagex.test(urlInput.value))
-    {
-      return true
-    }
-    else
-    {
-      return false
-    }
+let urlRagex = /(https:\/\/)?(www\.)?[A-Za-z0-9_\.]\.com$/;
+function isUrlValid() {
+  if (urlRagex.test(urlInput.value)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-nameInput.onkeyup=function()
-{
-  if(isUrlValid()&&isNameValid())
-    {
-      addBtn.removeAttribute("disabled");
-    }
-    else
-    {
-      addBtn.disabled="true";
-    }
-}
-urlInput.onkeyup=function()
-{
-  if(isUrlValid()&&isNameValid())
-    {
-      addBtn.removeAttribute("disabled");
-    }
-    else
-    {
-      addBtn.disabled="true";
-    }
-}
-
-
+nameInput.onkeyup = function () {
+  if (isUrlValid() && isNameValid()) {
+    addBtn.removeAttribute("disabled");
+  } else {
+    addBtn.disabled = "true";
+  }
+};
+urlInput.onkeyup = function () {
+  if (isUrlValid() && isNameValid()) {
+    addBtn.removeAttribute("disabled");
+  } else {
+    addBtn.disabled = "true";
+  }
+};
 
 addBtn.addEventListener("click", function () {
   if (addBtn.innerHTML == "Update") {
@@ -74,10 +53,8 @@ addBtn.addEventListener("click", function () {
       name: nameInput.value,
       url: urlInput.value,
     };
-    BookMarks.splice(mainIndex,1,BookMark);
-  } 
-  else
-  {
+    BookMarks.splice(mainIndex, 1, BookMark);
+  } else {
     let BookMark = {
       name: nameInput.value,
       url: urlInput.value,
@@ -92,21 +69,15 @@ addBtn.addEventListener("click", function () {
 
 function displayBook(anyArray) {
   let marks = ``;
-  for (let i = 0; i < anyArray.length; i++) {
+  for (let i = 1; i < anyArray.length; i++) {
     marks += `
         
-        <tr class="line">
-    <td class=" fw-bold">Index</td>
-    <td class=" fw-bold">Website Name</td>
-    <td class=" fw-bold">update</td>
-    <td class=" fw-bold">delete</td>
-</tr>
-
-        <tr class="secondLine">
+  
+        <tr>
+        <td class="text-capitalize">${i}</td>
     <td>${anyArray[i].name}</td>
-    <td><button class='btn btn-warning'>visit</button></td>
-    <td><button onclick="updateBook(${i})" class="btn btn-danger">update</button></td>
-    <td><button onclick="deleteBook(${i})" class="btn btn-info">delete</button></td>
+     <td><button onclick="updateBook(${i})" class="btn btn-warning text-capitalize">update</button></td>
+    <td><button onclick="deleteBook(${i})" class="btn btn-danger text-capitalize"> <i class="fa-solid fa-trash pe-1"></i>delete</button></td>
 </tr>
         
         `;
@@ -130,20 +101,15 @@ function updateBook(index) {
   nameInput.value = BookMarks[index].name;
   urlInput.value = BookMarks[index].url;
   addBtn.innerHTML = "Update";
-  mainIndex=index;
+  mainIndex = index;
 }
 
-function search(term)
-{
-let wantedBook=[];
-for(let i=0;i<BookMarks.length;i++)
-  {
-if(BookMarks[i].name.toLowerCase().includes(term))
-  {
-    wantedBook.push(BookMarks[i]);
+function search(term) {
+  let wantedBook = [];
+  for (let i = 0; i < BookMarks.length; i++) {
+    if (BookMarks[i].name.toLowerCase().includes(term)) {
+      wantedBook.push(BookMarks[i]);
+    }
   }
-
-  }
-displayBook(wantedBook);
-
+  displayBook(wantedBook);
 }

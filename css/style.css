@@ -1,7 +1,7 @@
 body {
   font-family: "PT Sans Caption", sans-serif;
 }
-main {
+body {
   min-height: 100vh;
   background-color: #f7ecde;
   overflow: hidden;
@@ -48,11 +48,10 @@ h2 {
   color: #fff;
   background-color: #d1512d;
 }
-.btn:hover{
-  background-color: #a03315;
+.btnSubmit:hover{
+  background-color: #a03315f7;
     color: #fff;
 }
-
 .big-layer {
   background-color: rgb(0, 0, 0, 0.7);
   position: absolute;
@@ -96,12 +95,4 @@ h2 {
 }
 .big-layer .content-Layer ul li i{
     color: #bb4120;
-}
-table .line{
-  border-bottom: gray;
-  border-style: solid;
-  border-width: 1px;
-  border-left: transparent;
-  border-top: transparent; 
-  border-right: transparent;
 }
