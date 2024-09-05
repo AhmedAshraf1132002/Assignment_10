@@ -48,9 +48,9 @@ h2 {
   color: #fff;
   background-color: #d1512d;
 }
-.btnSubmit:hover{
+.btnSubmit:hover {
   background-color: #a03315f7;
-    color: #fff;
+  color: #fff;
 }
 .big-layer {
   background-color: rgb(0, 0, 0, 0.7);
@@ -82,17 +82,16 @@ h2 {
   background-color: #4db748;
 }
 
-.big-layer .content-Layer p{
-    font-family: "Bree Serif", serif;
-    font-size: 21px;
-    color: #352e28;
-    font-weight: 500;
-    width: 453px;
+.big-layer .content-Layer p {
+  font-family: "Bree Serif", serif;
+  font-size: 21px;
+  color: #352e28;
+  font-weight: 500;
+  width: 453px;
 }
-.big-layer .content-Layer ul li{
-    font-size: 18px;
-   
+.big-layer .content-Layer ul li {
+  font-size: 18px;
 }
-.big-layer .content-Layer ul li i{
-    color: #bb4120;
+.big-layer .content-Layer ul li i {
+  color: #bb4120;
 }

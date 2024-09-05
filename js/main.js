@@ -69,12 +69,12 @@ addBtn.addEventListener("click", function () {
 
 function displayBook(anyArray) {
   let marks = ``;
-  for (let i = 1; i < anyArray.length; i++) {
+  for (let i = 0; i < anyArray.length; i++) {
     marks += `
         
   
         <tr>
-        <td class="text-capitalize">${i}</td>
+    <td class="text-capitalize">${i}</td>
     <td>${anyArray[i].name}</td>
      <td><button onclick="updateBook(${i})" class="btn btn-warning text-capitalize">update</button></td>
     <td><button onclick="deleteBook(${i})" class="btn btn-danger text-capitalize"> <i class="fa-solid fa-trash pe-1"></i>delete</button></td>
@@ -110,6 +110,6 @@ function search(term) {
     if (BookMarks[i].name.toLowerCase().includes(term)) {
       wantedBook.push(BookMarks[i]);
     }
+    displayBook(wantedBook);
   }
-  displayBook(wantedBook);
 }
